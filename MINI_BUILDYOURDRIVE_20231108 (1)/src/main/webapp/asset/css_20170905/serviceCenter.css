@@ -1,0 +1,65 @@
+.service_title{padding-top:115px;padding-bottom:125px}
+.service_title .txt_data{max-width:50%}
+.service_title .headerline{font-size:48px;line-height:52px;font-family:'Nanum Myeongjo';font-weight:700}
+.service_title .headerline em{font-style:normal;font-family:'MINIBold'}
+.service_title .small_title{margin-top:15px}
+
+.store_list{position:relative;max-width:1500px;margin:0 auto}
+.store_list .car{position:absolute;bottom:100%;right:0;width:50%;text-align:center}
+.store_list .desk_list h3{font-size:20px;padding-left:30px}
+.store_list .desk_list {overflow:hidden}
+.store_list .desk_list > div{float:left}
+.store_list .desk_list .list_tab{width:25%;padding-right:50px}
+.store_list .desk_list .list_tab .list_con{border-bottom:1px solid #000;overflow-y:auto}
+.store_list .desk_list .list_tab li a{display:block;font-size:14px;font-weight:700;color:#262626;padding:15px 30px;border-top:1px solid #000;line-height:20px;transition: all .3s ease-out}
+.store_list .desk_list .list_tab li a:hover,
+.store_list .desk_list .list_tab li.actived a{background:#000;color:#fff}
+.store_list .desk_list .list_tab li:first-child a{border-top:none}
+.store_list .desk_list .store_view{width:75%}
+.store_list .desk_list .store_view .list_con{padding:30px 0 35px 0;background:#f0f0f0}
+.store_list .desk_list .list_con{margin-top:20px;border-top:2px solid #000;height:475px}
+.store_list .desk_list .store_view .list_con{overflow:hidden}
+.store_list .desk_list .store_view .list_con > div{float:left}
+.store_list .desk_list .store_view .txt_data{width:33.33%;padding:0 30px}
+.store_list .desk_list .store_view .map_data{width:66.67%;padding:0 30px}
+.store_list .desk_list .store_name{font-family:'Nanum Myeongjo';font-weight:700;font-size:24px;line-height:26px}
+.store_list .desk_list .store_name span{font-family: 'MINIBold','Nanum Myeongjo';}
+.store_list .desk_list .store_view .txt_data ul{margin-top:35px}
+.store_list .desk_list .store_view .txt_data ul li{padding-left:25px;font-size:14px;font-weight:700;line-height:23px;margin-top:20px}
+.store_list .desk_list .store_view .txt_data ul li:first-child{margin-top:0}
+.store_list .desk_list .store_view .txt_data ul li.address{background:url(../images/content/store_view_icon01.gif) -3px top no-repeat}
+.store_list .desk_list .store_view .txt_data ul li.tel{background:url(../images/content/store_view_icon02.gif) -3px top no-repeat}
+.store_list .desk_list .store_view .txt_data ul li.time{background:url(../images/content/store_view_icon03.gif) -3px top no-repeat}
+.store_list .desk_list .btn_map{margin-top:20px;max-width:308px}
+
+.store_list .mobile_list{margin-top:40%;padding-top:80px;padding-bottom:80px;display:none}
+.store_list .mobile_list .accordion-menu > li > a{font-weight:700;font-size:20px}
+.store_list .mobile_list .acoordion-data{background:#fff;display:none}
+.store_list .mobile_list .acoordion-data ul{margin-top:35px;padding:0 20px}
+.store_list .mobile_list .acoordion-data ul li{padding-left:46px;font-size:18px;font-weight:700;line-height:23px;margin-top:24px;padding-top:3px;padding-bottom:3px}
+.store_list .mobile_list .acoordion-data ul li:first-child{margin-top:0}
+.store_list .mobile_list .acoordion-data ul li.address{background:url(../images/content/store_view_m_icon01.gif) left top no-repeat;background-size:33px auto}
+.store_list .mobile_list .acoordion-data ul li.tel{background:url(../images/content/store_view_m_icon02.gif) left top no-repeat;background-size:33px auto}
+.store_list .mobile_list .acoordion-data ul li.time{background:url(../images/content/store_view_m_icon03.gif) left top no-repeat;background-size:33px auto}
+.store_list .mobile_list .btn_map{padding:20px;margin-top:50px}
+
+
+
+@media screen and (max-width:1024px){
+    .service_title{padding-top:40px;padding-bottom:165px}
+    .service_title .txt_data{max-width:100%}
+    .store_list .car{width:50%;padding:0 30px}
+    .store_list .desk_list{padding-left:30px}
+    .store_list .desk_list .list_tab{padding-right:28px}
+    .store_list .desk_list .store_view .txt_data{padding:0 0 0 25px}
+    .store_list .desk_list .store_view .map_data{padding:0 25px}
+}
+
+@media screen and (max-width:640px){
+    .service_title{padding-bottom:0}
+    .service_title .headerline{font-size:26px;line-height:30px;}
+    .store_list .desk_list{display:none}
+    .store_list .mobile_list{display:block}
+    .store_list{background:#f0f0f0}
+    .store_list .car{width:100%;padding:0 20px;margin-bottom:-9%}
+}

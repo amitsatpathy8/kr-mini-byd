@@ -1,0 +1,53 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+<%@ include file="/WEB-INF/jsp/cmmn/include/declare.jspf" %>
+<%
+/**   
+* @Class Name : gnb.jspf
+* @Description : include  jsp
+* @Modification Information
+* 
+*   수정일         수정자                   수정내용
+*  -------    --------    ---------------------------
+*  2016.04.08 jjiman         최초 생성
+*
+* author jjiman
+* since 2016.04.08
+*/
+%>
+        <header id="header">
+            <div class="header_wrap">
+                <div class="container_small">
+                    <h1><a href="/ko/byd/index.do"><img src="/asset/images/common/logo.png" alt="MINI REGENERATION" width="84"/></a></h1>
+                    <nav id="gnb">
+                        <ul>
+				            <!--<li <c:if test="${fn:indexOf(C_URL, '/ko/byd/') > -1 }">class="actived"</c:if>><a href="/ko/byd/index.do">BYD 캠페인</a></li>-->
+                            <li <c:if test="${fn:indexOf(C_URL, '/accessories/') > -1 }">class="actived"</c:if>><a href="/accessories/index.do">ACCESSORIES</a></li>
+                            <li <c:if test="${fn:indexOf(C_URL, '/ko/lifestyle/') > -1 }">class="actived"</c:if>><a href="/ko/lifestyle/index.do">LIFESTYLE</a></li>
+                            <li <c:if test="${fn:indexOf(C_URL, '/tire/') > -1 }">class="actived"</c:if>><a href="/tire/index.do">WHEEL &amp; TIRE</a></li>
+                            <li <c:if test="${fn:indexOf(C_URL, '/ko/originalTire/') > -1 }">class="actived"</c:if>><a href="/ko/originalTire/index.do">ORIGINAL TIRE</a></li>
+                            <li <c:if test="${fn:indexOf(C_URL, '/happyfirstday/') > -1 }">class="actived"</c:if>><a href="/happyfirstday/index.do">HAPPY FIRST DAY</a></li>
+                            <li <c:if test="${fn:indexOf(C_URL, '/serviceCenter/') > -1 }">class="actived"</c:if>><a href="/serviceCenter/index.do">SERVICE CENTER</a></li>
+                        </ul>
+                    </nav>  
+				<c:choose>
+					<c:when test="${fn:indexOf(C_URL, '/tipsGuide/') > -1 }">
+                    <a href="javascript:checkSharePop();" class="btn_share"></a>
+					</c:when>
+					<c:otherwise>
+                    <a href="javascript:checkMobileList();" class="btn_car_list"></a>
+					</c:otherwise>
+				</c:choose>
+                    <a href="javascript:gnb.GnbCheck();" class="btn_list"><span></span><span></span><span></span></a>         
+                </div>
+                <ul class="m_gnb">                    
+                    <!--<li><a href="/ko/campaign/index.do">BYD 캠페인</a></li>-->
+                    <li><a href="/accessories/index.do">ACCESSORIES</a></li>
+                    <li><a href="/ko/originalTire/index.do">ORIGINAL TIRE</a></li>
+                    <li><a href="/tire/index.do">WHEEL &amp; TIRE</a></li>
+                    <li><a href="/ko/lifestyle/index.do">LIFESTYLE</a></li>
+                    <li><a href="/happyfirstday/index.do">HAPPY FIRST DAY</a></li>
+                    <li><a href="/serviceCenter/index.do">SERVICE CENTER</a></li>
+                </ul>
+            </div>
+            <p class="bg" onclick="gnb.GnbCheck();"></p>
+        </header>

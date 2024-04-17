@@ -1,0 +1,135 @@
+<ul id="thumb_list">
+    <li>
+        <div class="list__item__inner">                                                
+            <div>
+                <div class="default_thumb"><img src="../images/content/thumb_sample02.jpg" alt=""/></div>
+                <div class="info_wrap">
+                    <p class="list_title">MULTI-SPOKE 505, 17"<br>(LIGHT ALLOY)</p>
+                    <p class="tire_title">Pirelli CintuRato P7 RSC</p>
+                </div>
+                <p class="list_price">                    
+                    <del><span>216,000</span>원</del><span>173,000</span>원                        
+                </p>
+            </div>
+        </div>
+    </li>    
+    <li>
+        <div class="list__item__inner">                                                
+            <div>
+                <div class="default_thumb"><img src="../images/content/thumb_sample02.jpg" alt=""/></div>
+                <div class="info_wrap">
+                    <p class="list_title">MULTI-SPOKE 505, 17"<br>(LIGHT ALLOY)</p>
+                    <p class="tire_title">Pirelli CintuRato P7 RSC</p>
+                </div>
+                <p class="list_price">                    
+                    <del><span>216,000</span>원</del><span>173,000</span>원                        
+                </p>
+            </div>
+        </div>
+    </li>    
+    <li>
+        <div class="list__item__inner">                                                
+            <div>
+                <div class="default_thumb"><img src="../images/content/thumb_sample02.jpg" alt=""/></div>
+                <div class="info_wrap">
+                    <p class="list_title">MULTI-SPOKE 505, 17"<br>(LIGHT ALLOY)</p>
+                    <p class="tire_title">Pirelli CintuRato P7 RSC</p>
+                </div>
+                <p class="list_price">                    
+                    <del><span>216,000</span>원</del><span>173,000</span>원                        
+                </p>
+            </div>
+        </div>
+    </li>    
+    <li>
+        <div class="list__item__inner">                                                
+            <div>
+                <div class="default_thumb"><img src="../images/content/thumb_sample02.jpg" alt=""/></div>
+                <div class="info_wrap">
+                    <p class="list_title">MULTI-SPOKE 505, 17"<br>(LIGHT ALLOY)</p>
+                    <p class="tire_title">Pirelli CintuRato P7 RSC</p>
+                </div>
+                <p class="list_price">                    
+                    <del><span>216,000</span>원</del><span>173,000</span>원                        
+                </p>
+            </div>
+        </div>
+    </li>    
+    </ul>
+    <script>
+
+    ;( function( $, window, document, undefined )
+    {
+    'use strict';
+
+    var $list        = $( '#thumb_list' ),
+        $items        = $list.find( '.list__item__inner' ),
+        setHeights    = function()
+        {
+            $items.css( 'height', 'auto' );
+
+            var perRow = Math.floor( $list.width() / $items.width() );
+            //console.log(perRow);
+            if( perRow == null || perRow < 2 ) return true;
+
+            for( var i = 0, j = $items.length; i < j; i += perRow )
+            {
+                var maxHeight    = 0,
+                    $row        = $items.slice( i, i + perRow );
+
+                $row.each( function()
+                {
+                    var itemHeight = parseInt( $( this ).outerHeight() );
+                    if ( itemHeight > maxHeight ) maxHeight = itemHeight;
+                });
+                $row.css( 'height', maxHeight );
+            }
+        };
+
+
+    setHeights();
+    $( window ).on( 'resize', setHeights );
+    $list.find( 'img' ).on( 'load', setHeights );
+
+
+    })( jQuery, window, document );
+
+	/* 161024 수정 */
+    $(function(){
+    slide_arr = [];
+    $('#thumb_list').find('.gallery_thumb').each(function(){
+        var _slide = $(this).find('.picture_slide').bxSlider({
+            pagerCustom:'#'+$(this).find('.picture_slide').attr('data-pager'),
+            controls:false,
+            infiniteLoop:true,
+            pause:3500,
+            auto: true,
+            autoControls: true
+            
+        });
+        slide_arr.push(_slide);
+    });
+    });
+
+    $(document).ready(function(){
+        TweenMax.to($('#thumb_list'),0.6,{alpha:1});
+        galleryResize();
+    });
+
+    function galleryResize(){
+    var i=0;
+    $('#thumb_list').find('.gallery_thumb').each(function(){
+        slide_arr[i].reloadSlider({
+            pagerCustom:'#'+$(this).find('.picture_slide').attr('data-pager'),
+            controls:false,
+            infiniteLoop:true,
+            pause:3500,
+            auto: true,
+            autoControls: true            
+        });
+        i++;
+    });
+    }	
+	/* 161024 수정 끝 */
+
+    </script>

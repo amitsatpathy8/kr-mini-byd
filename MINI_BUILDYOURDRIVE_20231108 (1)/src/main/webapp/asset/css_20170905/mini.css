@@ -1,0 +1,167 @@
+.key_content{position:relative;padding-top:40px;padding-bottom:70px;z-index:0}
+.key_content .txt_data{width:32%}
+.key_content .small_title{font-size:18px;font-family:'MINIBold';}
+.key_content .headerline{font-size:54px;line-height:52px;font-family:'MINIBold';margin-top:7px}
+.key_content .headerline.m_head{display:none}
+.key_content ul{color:#262626;border-top:2px solid #000;border-bottom:2px solid #000;margin-top:30px}
+.key_content li{position:relative;padding:10px 0;font-size:14px;line-height:24px;word-break:keep-all;border-top:1px solid #000;font-weight:700;padding-left:40px;text-align:right}
+.key_content li:first-child{border-top:none}
+.key_content li .title{font-size:14px;line-height:24px;position:absolute;top:0;left:0;padding:10px 0;text-align:left;font-weight:400}
+
+
+.event_info{text-align:left;background:#f0f0f0}
+.event_info > div{padding-top:120px;padding-bottom:80px;min-height:400px;}
+.event_info .mobile_event{display:none}
+.event_info .car_visual{position:absolute;bottom:100%;right:0;width:67.53%;text-align:center;margin-bottom:-70px}
+.event_info .event_title{font-size:28px;color:#000;font-family:'MINIBold'}
+.event_info .event_tab{position:absolute;top:40px;left:0;width:38.13%;z-index:5;padding-left:30px;padding-right:50px}
+.event_info .event_tab .btn_tab{margin-top:45px}
+.event_info .event_tab .btn_tab > p{margin-top:10px}
+.event_info .event_tab .btn_tab > p:first-child{margin-top:0}
+.event_info .event_tab .txt{position:relative;font-size:14px;line-height:23px;margin-top:20px;padding-top:35px}
+.event_info .event_tab .txt:after{content:'';position:absolute;top:0;left:0;width:50px;height:2px;background:#000}
+
+.event_info .event_tab_con{position:relative;width:62%;margin-left:38%}
+.event_info .event_tab_con > div{position:relative}
+.event_info .event_tab_con ul{overflow:hidden}
+.event_info .event_tab_con img{width:100%}
+.event_info .event_tab_con li{position:relative;float:left;line-height:0}
+.event_info .event_tab_con li:hover img{opacity:1}
+.event_info .event_tab_con .obj{position:relative;line-height:0;margin-left:4px;margin-top:4px;background:#000;z-index:0}
+.event_info .event_tab_con .obj img{opacity:0.5;transition: all .3s ease-out;}
+.event_info .event_tab_con .thumb01{width:60.45%}
+.event_info .event_tab_con .thumb02{width:39.55%}
+.event_info .event_tab_con .thumb03{width:39.55%}
+.event_info .event_tab_con .txt{position:absolute;top:0;width:100%;padding:15px 20px;left:0;font-size:20px;color:#fff;font-weight:700;line-height:24px;z-index:5}
+.event_info .event_tab_con .txt span{font-size:16px}
+.event_info .event_tab_con > div{display:none}
+.event_info .mobile_event .accordion-menu > li > a{font-family:'Nanum Myeongjo';font-weight:700;font-size:24px}
+.event_info .acoordion-data{padding:20px 20px 70px 20px;background:#fff;display:none}
+.event_info .acoordion-data .visual img{width:100%}
+.event_info .acoordion-data > div{margin-top:30px}
+.event_info .acoordion-data > div:first-child{margin-top:0}
+.event_info .acoordion-data .info{font-size:20px;vertical-align:bottom;margin-top:10px;font-weight:bold}
+.event_info .acoordion-data .info span{display:inline-block;vertical-align:bottom;font-size:16px}
+
+.number_format{}
+.number_format > div{position:relative;display:inline-block;zoom:1;*display:inline;overflow:hidden;letter-spacing:normal}
+.number_format > div > p{position:relative;top:0;left:0;}
+.number_format > div > p > span{display:block;}
+
+/*
+.km{position:absolute;bottom:100%;right:10%;margin-bottom:-85px}
+.km .number_format > div{font-size:93px;color:#ed9300;line-height:93px;height:93px;font-family: 'MINIBold'}
+.km > div{display:inline-block;zoom:1;*display:inline}
+.km .txt{font-size:46px;vertical-align:top;padding-top:30px;font-family: 'MINIBold'}
+
+.year{position:absolute;bottom:100%;left:8%;margin-bottom:-140px}
+.year .number_format > div{font-size:128px;color:#ed9300;line-height:128px;height:128px;font-family: 'MINIBold'}
+.year > div{display:inline-block;zoom:1;*display:inline}
+.year .txt{font-size:64px;vertical-align:top;padding-top:50px;font-family: 'MINIBold'}
+*/
+
+.km{position:absolute;bottom:100%;right:10%;margin-bottom:-85px}
+.km .number_format{font-size:93px;color:#ed9300;line-height:93px;height:93px;font-family: 'MINIBold'}
+.km > div{display:inline-block;zoom:1;*display:inline}
+.km .txt{font-size:46px;vertical-align:top;padding-top:30px;font-family: 'MINIBold'}
+
+.year{position:absolute;bottom:100%;left:8%;margin-bottom:-140px}
+.year .number_format{font-size:128px;color:#ed9300;line-height:128px;height:128px;font-family: 'MINIBold'}
+.year > div{display:inline-block;zoom:1;*display:inline}
+.year .txt{font-size:64px;vertical-align:top;padding-top:50px;font-family: 'MINIBold'}
+
+
+
+
+@media screen and (max-width:1280px){  
+	.km{right:0}
+	.year{left:0;margin-bottom:-128px}
+}
+
+
+@media screen and (max-width:1024px){    
+    .key_content{padding-top:40px;padding-bottom:0}
+    .key_content .txt_data{width:auto}
+    .key_content .headerline br{display:none}
+    .key_content ul{max-width:50%;margin-top:20px}
+
+    .event_info > div{padding:90px 0 0 0;min-height:0;margin-top:45%}
+    .event_info .event_title{font-weight:700}
+    .event_info .car_visual{width:100%;padding:0 25px;margin-bottom:-70px}
+    .event_info .event_tab_con{width:100%;margin-left:0}
+    .event_info .event_tab{position:relative;top:auto;left:auto;width:auto;z-index:5;padding-left:25px;padding-right:25px;padding-bottom:20px}
+    .event_info .event_tab .btn_tab{margin-top:40px;overflow:hidden}
+    .event_info .event_tab .btn_tab p{float:left;width:50%;margin:0}
+    .event_info .event_tab .btn_tab p:first-child a{margin-right:9px}
+    .event_info .event_tab .btn_tab p:last-child a{margin-left:9px}
+    .event_info .event_tab_con .thumb01{width:60%}
+    .event_info .event_tab_con .thumb01 .obj{margin-left:0}
+	.km{right:25px}
+	.year{left:25px;margin-bottom:-16%}
+}
+
+@media screen and (max-width:768px){    
+	.km{margin-bottom:-10%}
+
+	/*
+	.km .number_format > div{font-size:60px;line-height:60px;height:60px}
+	.km .txt{font-size:30px;padding-top:20px}
+	*/
+
+	.km .number_format{font-size:60px;line-height:60px;height:60px}
+	.km .txt{font-size:30px;padding-top:20px}
+
+	.year{margin-bottom:-16%}
+
+	/*
+	.year .number_format > div{font-size:70px;line-height:70px;height:70px}
+	.year .txt{font-size:40px;padding-top:20px}
+	*/
+	.year .number_format{font-size:70px;line-height:70px;height:70px}
+	.year .txt{font-size:40px;padding-top:20px}
+
+}
+
+@media screen and (max-width:640px){    
+    .key_content ul{max-width:100%}
+    .event_info .desk_event{display:none}
+    .event_info .mobile_event{display:block}
+    .event_info .car_visual{padding:0 20px;margin-bottom:-20%}
+    .event_info > div{padding:155px 20px 95px 20px;margin-top:50%}
+
+	.year{left:20px}
+
+	.key_content li span{display:inline-block}
+
+    .key_content .headerline{display:none;font-size:44px;line-height:46px;letter-spacing:-1px;}
+	.key_content .headerline.m_head{display:block}
+	.key_content .headerline.m_head br{display:block}
+}
+
+@media screen and (max-width:420px){    
+    .event_info > div{padding-top:100px}
+	.km{margin-bottom:-10%;right:20px}
+	/*
+	.km .number_format > div{font-size:38px;line-height:38px;height:38px}
+	.km .txt{font-size:24px;padding-top:10px}
+	*/
+
+	.km .number_format{font-size:38px;line-height:38px;height:38px}
+	.km .txt{font-size:24px;padding-top:10px}
+
+	.year{margin-bottom:-15%}
+	/*
+	.year .number_format > div{font-size:50px;line-height:50px;height:50px}
+	.year .txt{font-size:30px;padding-top:20px}
+
+	*/
+
+	.year .number_format{font-size:50px;line-height:50px;height:50px}
+	.year .txt{font-size:30px;padding-top:20px}
+
+
+}
+
+@media screen and (max-width:320px){
+	.key_content .headerline{font-size:38px;line-height:38px}
+}

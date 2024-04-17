@@ -1,0 +1,194 @@
+
+/* 21.04.13. 추가 {*/
+    .car-month-2 .grid-wrap .grid-data {
+        margin:-10px -5px;
+    }
+
+    .lifestyle-month-2.type2 {
+        overflow: hidden;
+    }
+    .lifestyle-month-2.type2 .list_title {
+        font-family: 'MINIBold';
+        font-size: 20px;
+        line-height: 24px;
+        padding: 10px 0;
+    }
+    .lifestyle-month-2.type2 .buy_get_one {
+        margin:0 0 0
+    }
+    .lifestyle-month-2.type2 .buy_get_one .buy_get_one_cell {
+    }
+    .lifestyle-month-2.type2 .buy_get_one .buy_one {
+        width: 50%;
+        flex: 0 0 auto;
+        padding:0 10px 0 0;
+    }
+    .lifestyle-month-2.type2 .buy_get_one .get_one {
+        width: 50%;
+        flex: 0 0 auto;
+        padding:0 0 0 10px;
+    }
+    .lifestyle-month-2.type2 .price-data {
+        padding-top:10px;
+    }
+    .lifestyle-month-2.type2 .price-data .price-value.sale strong {
+        font-size: 24px;
+    }
+    .lifestyle-month-2.type2 .price-data .price-value {font-size: 14px; margin:5px 0; padding:0;}
+    .lifestyle-month-2.type2 .price-data .price-value em {text-align: left; width:60%; margin-top: 15px; line-height: 100%;}
+    .lifestyle-month-2.type2 .price-data .price-value.sale  em strong {
+        font-family: 'MINIBold','Nanum Gothic';
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 15px;
+    }
+    .lifestyle-month-2.type2 .price-data .price-value .priveNum {
+        font-size: 14px;
+        text-align: left;
+        font-weight: bold;
+        margin-top: 15px;
+        vertical-align: middle;
+    }
+    .lifestyle-month-2.type2 .price-data .price-value .priveNum  span {
+        display: block;
+        line-height: 1;
+        font-weight: normal;
+        font-family: 'MINIRegular', 'Nanum Myeongjo';
+        margin-bottom: 4px;
+        font-size: 16px;
+        letter-spacing: -0.5;
+    }
+    .lifestyle-month-2.type2 .price-data .price-value .priveNum strong {
+        display: block;
+        line-height:1;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .lifestyle-month-2.type2 .price-data .price-value .priveNum p {margin-bottom: 10px; font-size: 16px;}
+    .lifestyle-month-2.type2 .price-data .price-value .numsale {font-size: 26px; font-family: 'MINIRegular', 'Nanum Myeongjo'; padding-bottom: 10px; letter-spacing: -1px;}
+    .lifestyle-month-2.type2 .price-data .price-value .discle {font-size: 12px; font-family: 'MINIRegular', 'Nanum Myeongjo'; font-weight: normal;}
+    .acc_box .bx-controls-auto {
+        display: none;
+    }
+    .acc_box .detail_list_wrap {
+        float: left;
+        width: 100%;
+        padding: 0;
+    }
+    .acc_box .detail_list_wrap  #thumb_list .list_title {
+        font-family: 'MINIBold';
+        font-size: 22px;
+        line-height: 24px;
+        padding:10px 0;
+    }
+    .acc_box .detail_list_wrap > ul > li {
+        float: left;
+        width: 33.333%;
+        padding: 0 5px;
+        margin-bottom: 30px;
+    }
+    .acc_box .detail_list_wrap .list__item__inner {
+        position: relative;
+        overflow: hidden;
+        background: #f0f0f0;
+        padding-bottom:50px;
+    }
+    .detail_list_wrap .list__item__inner > div {
+        padding:22px;
+    }
+    .detail_list_wrap .bx-pager a{display:inline-block;width:22px;height:22px;border:1px solid transparent;overflow:hidden;cursor:pointer;opacity:1;margin-left:3px;background:none;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%}
+    .detail_list_wrap .bx-pager a.active{background:none;border-color:#000}
+    .detail_list_wrap .bx-pager a img{border:2px solid #fff;overflow:hidden;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%}
+    .detail_list_wrap .bx-pager a:first-child{margin-left:0}
+    .detail_list_wrap .bx-pager{position:relative;height:22px;margin-top:10px;text-align:left}
+    
+    .detail_list_wrap .gallery_thumb{padding-bottom:10px}
+    .detail_list_wrap .gallery_thumb .picture_slide img{width:100%}
+    .detail_list_wrap .info_wrap{position:relative;margin-top:10px;min-height:100px;padding-bottom:40px}
+    .detail_list_wrap .info_wrap.no_price{padding-bottom:0}
+    .detail_list_wrap .info_wrap .list_title{font-family: 'MINIBold';font-size:24px;line-height:24px;}
+    .detail_list_wrap .info_wrap .long_info{font-size:13px;line-height:18px;margin-top:10px}
+    .detail_list_wrap .mulity_price {
+        overflow: hidden;
+    }
+    .detail_list_wrap .mulity_price .txt {
+        font-family: 'MINIBold','Nanum Gothic';
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 15px;
+        margin-top: 15px;
+        width:50%;
+        float:left;
+    }
+    .detail_list_wrap .mulity_price .price {
+        width:50%;
+        float:right;
+        font-size: 14px;
+        text-align: right;
+        font-weight: bold;
+        margin-top: 15px;
+        vertical-align: middle;
+    }
+    .detail_list_wrap .mulity_price .price span {
+        font-family: 'MINIBold';
+        font-size: 14px;
+        margin-top:2px;
+    }
+    .detail_list_wrap .mulity_price .price span.orgPay {
+        display:block;
+        font-weight: normal;
+        font-family: 'MINIRegular', 'Nanum Myeongjo';
+        margin-bottom:2px;
+        font-size: 13px;
+    }
+    .subcap {position:absolute; right:50px; bottom: 20px; width: 200px; overflow: hidden; background: red;}
+    @media screen and (max-width: 1024px) {
+        .acc_box .detail_list_wrap  #thumb_list .list_title {
+            font-size: 18px;
+        }
+    }
+    @media screen and (max-width: 768px){
+        .lifestyle-month-2.type2 .buy_get_one {
+            display: block;
+        }
+        .lifestyle-month-2.type2 .buy_get_one .buy_one {
+            width: 100%;
+        }
+        .lifestyle-month-2.type2 .buy_get_one .get_one {
+            width: 100%;
+        }
+        .acc_box .detail_list_wrap > ul > li {
+            width:100%;
+            padding:0;
+        }
+        .acc_box .detail_list_wrap  #thumb_list .list_title {
+            min-height:auto;
+        }
+    }
+    @media screen and (max-width: 640px){
+        .detail_list_wrap .list__item__inner > div {
+            padding:15px
+        }
+    }
+    @media screen and (max-width: 360px){ 
+
+        .lifestyle-month-2.type2 .price-data .price-value.sale em strong {
+            font-size: 15px;
+        }
+        .lifestyle-month-2.type2 .price-data .price-value .priveNum span {
+            font-size: 12px;
+        }
+        .lifestyle-month-2.type2 .price-data .price-value .priveNum strong {
+            font-size: 13px;;
+        }
+        .detail_list_wrap .mulity_price .txt {
+            font-size: 15px;
+        }
+        .detail_list_wrap .mulity_price .price span.orgPay {
+            font-size: 12px;
+        }
+        .detail_list_wrap .mulity_price .price span {
+            font-size: 13px;
+        }
+    }
+    /* 21.04.13. 추가 }*/

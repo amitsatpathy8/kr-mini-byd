@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bmwminiacc.site.service.impl.PlanningMapper">
+
+	
+	<!--  기획 페이지 최근 첫번째  상세 정보  -->
+	<select id="selectPlanningDetail"  resultType="egovMap">
+		SELECT /* ProgramID=PlanningMapper.selectPlanningDetail */
+			IDX
+			, PC_CONTS
+			, MOBILE_CONTS
+			, USE_FLG
+			, REG_ID
+			, REG_DT
+			, MOD_ID
+			, MOD_DT
+		 
+		FROM TB_PLANNING
+		WHERE
+			DEL_FLG = 'N'
+			AND USE_FLG = 'Y'
+		ORDER BY IDX DESC
+		LIMIT 1
+	</select>
+	
+	
+	
+
+	
+</mapper>

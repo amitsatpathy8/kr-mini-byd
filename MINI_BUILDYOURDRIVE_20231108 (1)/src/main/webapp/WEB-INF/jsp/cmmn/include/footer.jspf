@@ -1,0 +1,44 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+<%@ include file="/WEB-INF/jsp/cmmn/include/declare.jspf" %>
+<%
+/**   
+* @Class Name : footer.jspf
+* @Description : include  jsp
+* @Modification Information
+* 
+*   수정일         수정자                   수정내용
+*  -------    --------    ---------------------------
+*  2016.04.08 jjiman         최초 생성
+*
+* author jjiman
+* since 2016.04.08
+*/
+%>
+        <footer id="footer">
+            <div class="container_big">
+                <ul>
+                    <li><a href="http://mini.co.kr/mini/etc/privacy_v4.jsp" target="_blank">개인정보 처리방침</a></li>
+                    <li><a href="http://mini.co.kr/mini/etc/privacy4.jsp" target="_blank">영상정보처리기기운영·관리 방침</a></li>
+                </ul>
+            </div>
+            <div class="container_big copy"><p>COPYRIGHT © 2023 MINI KOREA. ALL RIGHTS RESERVED.</p></div>
+        </footer>
+
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-81211249-2', 'auto');
+  ga('send', 'pageview');
+
+</script>    
+
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "123d90e79fcc38c";
+wcs_do();
+</script>

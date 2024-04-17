@@ -1,0 +1,99 @@
+
+            <div class="detail_data">
+                <div class="detail_menu">
+                    <h3>ORIGINAL</h3>                                    
+                    <ul>
+                        <li class="actived"><a href="javascript:topCate.ajaxLoadList('accessories_list.html');" onclick="sort_menu(this);">EXTERIOR (7)</a></li>
+                        <li><a href="javascript:topCate.ajaxLoadList('accessories_list.html');" onclick="sort_menu(this);">INTERIOR</a></li>
+                        <li><a href="javascript:topCate.ajaxLoadList('accessories_list.html');" onclick="sort_menu(this);">ELECTRONICS</a></li>
+                        <li><a href="javascript:topCate.ajaxLoadList('accessories_list.html');" onclick="sort_menu(this);">ROOF ACCESSORIES</a></li>
+                        <li><a href="javascript:topCate.ajaxLoadList('accessories_list.html');" onclick="sort_menu(this);">MINI ORIGINAL CAR CARE -<br>SELF CAR WASH PACKAGE</a></li>
+
+                    </ul>
+                    <h3>JCW</h3>
+                    <ul>
+                        <li><a href="javascript:topCate.ajaxLoadList('accessories_list.html');" onclick="sort_menu(this);">PERFORMANCE TUNING</a></li>
+                        <li><a href="javascript:topCate.ajaxLoadList('accessories_list.html');" onclick="sort_menu(this);">EXTERIOR</a></li>
+                        <li><a href="javascript:topCate.ajaxLoadList('accessories_list.html');" onclick="sort_menu(this);">INTERIOR</a></li>
+                    </ul>
+
+                </div>
+                <div id="detail_list" class="detail_list_wrap">
+                <!-- 
+                //    @ ajax content (accessories_list.html)
+                -->
+                    
+                <!-- 
+                //    @ ajax content end (accessories_list.html)
+                -->
+                </div>
+            </div>
+
+            <script>
+				/* 161021 수정 */
+                $(function(){
+					mResizeCheck02 = $(window).width();
+                    topCate.ajaxLoadList('accessories_list.html');
+					scroll_sort_check();
+                });
+
+                function sort_menu(_t){
+                    var __t = $(_t);
+                    var __p = __t.parent();
+                    var __pp = __t.parents('ul');
+                    $('.detail_menu').find('ul').each(function(){
+                        if(__pp.index() == $(this).index()){
+                            $(this).find('li').eq(__p.index()).addClass('actived').siblings().removeClass('actived');
+                        }else{
+                            $(this).find('li').removeClass('actived');
+                        }
+                    });
+                }
+				
+                $(window).scroll(function() {            
+                    npos = $(window).scrollTop();
+					scroll_sort_check();                                     
+                });//end scroll
+
+				$(window).resize(function(){
+					npos = $(window).scrollTop();
+					if (mResizeCheck02 != $(window).width()) {						
+						scroll_sort_check();
+						mResizeCheck02 = $(window).width();
+					}    
+				});
+
+
+				function scroll_sort_check(){
+					if(SW > 640){
+                        if(npos >= $('#product_detail').offset().top - 89){
+                            $('#product_detail').find('.detail_menu').addClass('fix');    
+                            $('#product_detail').find('.detail_list_wrap').addClass('fix');    
+
+							if(npos >= $('.bottom_info').offset().top - $('.detail_menu').innerHeight()-$('#header').innerHeight()-60){
+								$('.detail_menu').css({'position':'absolute','top':'auto','bottom':0}).addClass('b_fix');
+							}else{
+								$('.detail_menu').attr('style','').removeClass('b_fix');
+							}	
+                        }else{
+                            $('#product_detail').find('.detail_menu').removeClass('fix');
+                            $('#product_detail').find('.detail_menu').removeClass('b_fix');
+                            $('#product_detail').find('.detail_list_wrap').removeClass('fix');
+							$('.detail_menu').attr('style','').removeClass('b_fix');
+                        }
+
+						if($('#product_detail').find('.detail_menu').innerHeight() > $('#product_detail').find('.detail_list_wrap').innerHeight()){
+							 $('#product_detail').find('.detail_data').css({'min-height':$('#product_detail').find('.detail_menu').innerHeight()});
+						}else{
+							 $('#product_detail').find('.detail_data').attr('style','');
+						}
+                    }else{
+                            $('#product_detail').find('.detail_menu').removeClass('fix');
+                            $('#product_detail').find('.detail_menu').removeClass('b_fix');
+                            $('#product_detail').find('.detail_list_wrap').removeClass('fix');
+							$('#product_detail').find('.detail_data').attr('style','');
+                    }   
+				}
+				/* 161021 수정 끝 */
+
+            </script>

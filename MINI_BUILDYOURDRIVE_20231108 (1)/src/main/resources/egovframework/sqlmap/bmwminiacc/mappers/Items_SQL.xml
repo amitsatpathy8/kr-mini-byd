@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bmwminiacc.items.service.impl.ItemsMapper">
+	
+	<resultMap id="itemsResult" type="itemsVO">
+		<result column="IDX" property="idx" />
+		<result column="PART_NUM" property="partNum" />
+		<result column="ITEMS_NM" property="itemsNm" />
+		<result column="ITEMS_CONTS" property="itemsConts" />	
+		<result column="MODEL_TXT" property="modelTxt" />	
+		<result column="ETC1" property="etc1" />	
+		<result column="ETC2" property="etc2" />	
+		<result column="ETC3" property="etc3" />				
+		<result column="OPT_FLG" property="optFlg" /> 
+		<result column="PRICE" property="price" />
+		<result column="SALE_PRICE" property="salePrice" />
+		<result column="SALE_FLG" property="saleFlg" />
+		<collection property="itemsImgList" column="{idx=idx}" javaType="java.util.ArrayList" ofType="com.bmwminiacc.items.service.ItemsImgVO" select="selectItemsImgList" />
+		<collection property="itemsOptList" column="{idx=idx}" javaType="java.util.ArrayList" ofType="com.bmwminiacc.items.service.ItemsOptVO" select="selectItemsOptList" />
+	</resultMap>
+	<resultMap id="partGrpResult" type="partGrpVO"> 
+		<result column="MODEL_CD" property="modelCd" /> 
+		<result column="PART_GRP_CD" property="partGrpCd" />
+		<result column="PART_GRP_NM" property="partGrpNm" />
+		<collection property="partList" column="{searchModelCd=MODEL_CD, searchPartGrpCd=PART_GRP_CD}" javaType="java.util.ArrayList" ofType="partVO" select="selectPartList" />
+	</resultMap>	
+		
+	<resultMap id="partResult" type="partVO">
+		<result column="MODEL_CD" property="modelCd" /> 
+		<result column="PART_CD" property="partCd" />
+		<result column="PART_NM" property="partNm" />
+		<result column="ITEMS_CNT" property="itemsCnt" />
+		<collection property="itemsList" column="{searchModelCd=MODEL_CD, searchPartCd=PART_CD}" javaType="java.util.ArrayList" ofType="com.bmwminiacc.items.service.ItemsVO" select="selectItemsList" />
+	</resultMap>
+	
+	<!-- 모델 상세 -->
+	<select id="selectModelDetail"  resultType="modelVO"> 
+		SELECT /* ProgramID=ItemsMapper.selectModelDetail */
+			MODEL_CD
+			, MODEL_NM 
+			, MODEL_SORT
+			, MAIN_IMG_OG_NM
+			, MAIN_IMG_PATH
+			, MAIN_IMG_REAL_NM
+			, TOP_OFF_IMG_OG_NM
+			, TOP_OFF_IMG_PATH
+			, TOP_OFF_IMG_REAL_NM			
+			, TOP_ON_IMG_OG_NM
+			, TOP_ON_IMG_PATH
+			, TOP_ON_IMG_REAL_NM
+			, PC_VISUAL_IMG_OG_NM
+			, PC_VISUAL_IMG_PATH
+			, PC_VISUAL_IMG_REAL_NM			
+			, MOBILE_VISUAL_IMG_OG_NM
+			, MOBILE_VISUAL_IMG_PATH
+			, MOBILE_VISUAL_IMG_REAL_NM
+	 
+		FROM TB_MODEL
+		WHERE 
+			USE_FLG = 'Y'
+			AND MODEL_CD = #{ modelCd }
+				
+	</select>
+		
+	<!-- 모델 목록 -->
+	<select id="selectModelList" parameterType="itemsSearchVO" resultType="egovMap"> 
+	<![CDATA[ ]]>	 
+		SELECT /* ProgramID=ItemsMapper.selectModelList */
+			A.MODEL_CD
+			, A.MODEL_NM	
+			, MAIN_IMG_OG_NM
+			, MAIN_IMG_PATH
+			, MAIN_IMG_REAL_NM
+			, TOP_OFF_IMG_OG_NM
+			, TOP_OFF_IMG_PATH
+			, TOP_OFF_IMG_REAL_NM			
+			, TOP_ON_IMG_OG_NM
+			, TOP_ON_IMG_PATH
+			, TOP_ON_IMG_REAL_NM
+			, PC_VISUAL_IMG_OG_NM
+			, PC_VISUAL_IMG_PATH
+			, PC_VISUAL_IMG_REAL_NM			
+			, MOBILE_VISUAL_IMG_OG_NM
+			, MOBILE_VISUAL_IMG_PATH
+			, MOBILE_VISUAL_IMG_REAL_NM					
+            , IFNULL(B.ITEMS_CNT, 0) as ITEMS_CNT 
+		FROM TB_MODEL A
+					left join (
+								SELECT
+									count(*) as ITEMS_CNT
+									, MODEL_CD
+                                
+                                FROM TB_ITEMS_PART_REL AA
+											inner join TB_ITEMS BB 
+												on AA.ITEMS_IDX = BB.ITEMS_IDX
+								WHERE 
+									BB.DEL_FLG = 'N'
+                                    AND BB.USE_FLG = 'Y'
+									<if test="wheelTireYn eq 'Y'.toString()">
+										AND LEFT(AA.PART_CD, 3) = 'A03'
+									</if>
+									<if test="wheelTireYn eq 'N'.toString()">
+										AND LEFT(AA.PART_CD, 3) <![CDATA[ <> ]]> 'A03'
+									</if>                                    
+								GROUP BY AA.MODEL_CD
+								) B
+					on A.MODEL_CD = B.MODEL_CD	
+		<where>
+			A.USE_FLG = 'Y'		
+			AND ITEMS_CNT > 0 
+		</where>
+		ORDER BY A.MODEL_SORT ASC, A.REG_DT DESC	
+	</select>	
+
+  
+	<!-- 첫번째 파트 코드 리턴  -->
+	<select id="selectTopPartCd" parameterType="itemsSearchVO" resultType="String">
+	<![CDATA[ ]]>
+		SELECT /* ProgramID=ItemsMapper.selectTopPartCd */
+			T.PART_CD
+			, IFNULL(R.ITEMS_CNT, 0) as ITEMS_CNT 
+		FROM TB_PART T		
+				inner join 
+					(
+						SELECT
+							A.PART_CD
+							, COUNT(A.PART_CD) as ITEMS_CNT 
+						FROM TB_ITEMS_PART_REL A 
+								inner join TB_ITEMS B
+									on A.ITEMS_IDX = B.ITEMS_IDX
+						WHERE 
+							B.USE_FLG = 'Y'
+							AND B.DEL_FLG = 'N'
+							AND A.MODEL_CD = #{ searchModelCd }	
+							<if test="wheelTireYn eq 'Y'.toString()">
+								AND LEFT(A.PART_CD, 3) = 'A03'
+							</if>
+							<if test="wheelTireYn eq 'N'.toString()">
+								AND LEFT(A.PART_CD, 3) <![CDATA[ <> ]]> 'A03'
+							</if>
+						GROUP BY A.PART_CD     
+					) R 
+		            on T.PART_CD = R.PART_CD		
+		<where>
+			T.USE_FLG = 'Y'		
+			AND ITEMS_CNT <![CDATA[ > ]]> 0 
+		
+		</where>
+		ORDER BY T.PART_SORT ASC, T.REG_DT DESC	
+		LIMIT 0,1 
+	</select>
+
+	<!-- 파트 그룹 목록 (A03 제외 : WHEEL & TIRE)   -->
+	<select id="selectPartGrpList" parameterType="itemsSearchVO" resultMap="partGrpResult"> 
+	<![CDATA[ ]]>	 
+		SELECT /* ProgramID=ItemsMapper.selectPartGrpList */
+			PART_GRP_CD
+			, PART_GRP_NM
+			, #{ searchModelCd } as MODEL_CD
+														
+		FROM TB_PART_GRP 
+		<where>
+			USE_FLG = 'Y'
+			AND PART_GRP_CD != 'A03'
+			<if test="searchCateFlg != null and searchCateFlg != ''">
+				AND CATE_FLG = #{ searchCateFlg }
+			</if>	
+		</where>		
+		ORDER BY PART_GRP_SORT ASC, REG_DT DESC	
+	</select>
+	
+		
+	<!-- 파트 목록  -->
+	<select id="selectPartList" parameterType="itemsSearchVO" resultMap="partResult">
+	<![CDATA[ ]]>	 
+		SELECT /* ProgramID=ItemsMapper.selectPartList */
+			A.PART_CD
+			, A.PART_NM	
+			, IFNULL(B.ITEMS_CNT, 0) as ITEMS_CNT 
+			, #{ searchModelCd } as MODEL_CD										
+		FROM TB_PART A
+					left join (
+								SELECT
+									count(*) as ITEMS_CNT
+									, PART_CD
+                                
+                                FROM TB_ITEMS_PART_REL AA
+											inner join TB_ITEMS BB 
+												on AA.ITEMS_IDX = BB.ITEMS_IDX
+								WHERE 
+									BB.DEL_FLG = 'N'
+                                    AND BB.USE_FLG = 'Y'
+                                    AND AA.MODEL_CD = #{ searchModelCd }	
+								GROUP BY AA.PART_CD
+								) B
+					on A.PART_CD = B.PART_CD		
+		<where> 
+			USE_FLG = 'Y'
+			AND PART_GRP_CD = #{searchPartGrpCd}
+			AND ITEMS_CNT > 0 
+		</where>	
+		ORDER BY A.PART_SORT ASC, A.REG_DT DESC	
+	</select>
+	
+
+	<!-- 상품 목록  -->
+	<select id="selectItemsList" parameterType="itemsSearchVO" resultMap="itemsResult">
+	<![CDATA[ ]]>	
+		SELECT /* ProgramID=ItemsMapper.selectItemsList */
+			A.ITEMS_IDX as IDX
+			, A.OPT_FLG			
+			, A.ITEMS_NM
+			, A.ITEMS_CONTS		
+			, A.MODEL_TXT
+			, A.ETC1
+			, A.ETC2
+			, A.ETC3	
+			, A.PRICE
+			, A.SALE_PRICE
+			, A.SALE_FLG
+		FROM TB_ITEMS A  
+				inner join TB_ITEMS_PART_REL B
+					on A.ITEMS_IDX = B.ITEMS_IDX
+		<where> 
+			A.USE_FLG = 'Y'
+			AND A.DEL_FLG = 'N'		
+			AND B.MODEL_CD = #{ searchModelCd }	 
+			AND B.PART_CD = #{ searchPartCd }
+			
+		</where> 
+		ORDER BY A.ITEMS_SORT ASC, A.REG_DT DESC 		
+	
+	</select>
+	
+	<!-- 상품 이미지 목록 -->
+	<select id="selectItemsImgList" parameterType="itemsVO" resultType="itemsImgVO">
+	<![CDATA[ ]]>	 
+		SELECT /* ProgramID=ItemsMapper.selectItemsImgList */
+			IMG_OG_NM
+			, IMG_PATH
+			, IMG_REAL_NM
+			, ICON_OG_NM
+			, ICON_PATH
+			, ICON_REAL_NM
+		FROM TB_ITEMS_IMG
+		<where>
+			ITEMS_IDX = #{idx}
+		</where>
+		ORDER BY IMG_SORT ASC, IDX ASC
+	</select>
+
+	<!-- 상품 옵션 목록 -->
+	<select id="selectItemsOptList" parameterType="itemsVO" resultType="itemsOptVO">
+	<![CDATA[ ]]>	
+		SELECT /* ProgramID=ItemsMapper.selectItemsOptList */
+			PART_NUM
+			, OPT_NM
+			, OPT_PRICE
+			, OPT_SALE_PRICE
+			, OPT_SALE_FLG
+		FROM TB_ITEMS_OPT
+		<where>
+			ITEMS_IDX = #{idx}
+		</where>
+		ORDER BY OPT_SORT ASC, IDX ASC
+	</select>
+
+</mapper>

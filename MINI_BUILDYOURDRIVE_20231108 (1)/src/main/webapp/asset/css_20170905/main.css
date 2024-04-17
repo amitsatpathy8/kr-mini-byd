@@ -1,0 +1,155 @@
+.main_large_teaser .visual{text-align:center;line-height:0;max-width:1680px;margin:0 auto;border-bottom:10px solid #783e2d;line-height:0}
+.main_large_teaser .teaser_info{padding-top:40px;padding-bottom:80px}
+.main_large_teaser .small_title{font-size:30px;font-family:'Nanum Myeongjo';}
+.main_large_teaser .headerline{font-size:68px;font-family:'MINIBold';margin-top:5px}
+.main_large_teaser .headerline.m_head{display:none}
+.main_large_teaser .txt{font-size:15px;line-height:23px;word-break:keep-all}
+.main_large_teaser .model_table ul{color:#262626;border-top:2px solid #000;border-bottom:2px solid #000;margin-top:26px}
+.main_large_teaser .model_table li{position:relative;padding:10px 0;font-size:14px;line-height:24px;border-top:1px solid #000;padding-left:100px;text-align:left;font-weight:700}
+.main_large_teaser .model_table li:first-child{border-top:none}
+.main_large_teaser .model_table li .title{font-size:14px;line-height:24px;position:absolute;top:0;left:0;padding:10px 0;text-align:left;font-weight:400}
+.main_large_teaser .model_table li .ident{position:relative;padding-left:10px;display:block}
+.main_large_teaser .model_table li .ident em{position:absolute;top:0;left:0}
+.main_large_teaser .model_wrap{overflow:hidden;margin-top:15px}
+.main_large_teaser .model_wrap .model_table{width:50%}
+.main_large_teaser .model_wrap .model_list{margin-top:50px}
+.main_large_teaser .model_wrap .model_list .title{text-align:center;margin-bottom:40px}
+.main_large_teaser .model_wrap .model_list .title p{position:relative;font-size:32px;display:inline-block;padding:0 56px;font-family:'MINIRegular'}
+.main_large_teaser .model_wrap .model_list .title p:before{content:'';position:absolute;top:50%;left:0;display:block;width:36px;height:2px;margin-top:-1px;background:#000}
+.main_large_teaser .model_wrap .model_list .title p:after{content:'';position:absolute;top:50%;right:0;display:block;width:36px;height:2px;margin-top:-1px;background:#000}
+
+
+.main_large_teaser .model_wrap .model_list ul{margin:10px auto 0 auto}
+.main_large_teaser .model_wrap .model_list ul:after {content:" ";display:block;clear:both;overflow:hidden}
+.main_large_teaser .model_wrap .model_list ul li{float:left;width:20%}
+.main_large_teaser .model_wrap .model_list .cell{position:relative;margin: 0 auto;position:relative;max-width:280px;cursor:pointer;padding-bottom:44px;}
+.main_large_teaser .model_wrap .model_list .cell:hover .name{color:#ac2430}
+.main_large_teaser .model_wrap .model_list .thumb{position:relative;overflow:hidden}
+.main_large_teaser .model_wrap .model_list .thumb img{position:relative;
+    -webkit-transform: translate(300px, 0px);
+    -moz-transform: translate(300px, 0px);
+    -o-transform: translate(300px, 0px);
+    -ms-transform: translate(300px, 0px);
+    transform: translate(300px, 0px);
+-webkit-transition: all 900ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+   -moz-transition: all 900ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+     -o-transition: all 900ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+        transition: all 900ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+
+-webkit-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+     -o-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+        transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+}
+
+.main_large_teaser .model_wrap .model_list .effect .thumb img{
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+}
+
+
+.main_large_teaser .model_wrap .model_list .name{position:absolute;top:0;left:0;font-size:16px;font-family: 'MINIBold';text-align:left;z-index:10;transition: all .3s ease-out}
+.main_large_teaser .model_wrap .model_list .btn_more{display:none;position:absolute;bottom:0;left:0;width:100%}
+.main_large_teaser .model_wrap .model_list .btn_all{display:none;clear: both;}
+
+
+
+.main_offer{padding:40px 0 80px 0;background:#f0f0f0}
+.main_offer .title{text-align:center;}
+.main_offer .title p{position:relative;font-size:32px;display:inline-block;padding:0 56px;font-family:'MINIRegular'}
+.main_offer .title p:before{content:'';position:absolute;top:50%;left:0;display:block;width:36px;height:2px;margin-top:-1px;background:#000}
+.main_offer .title p:after{content:'';position:absolute;top:50%;right:0;display:block;width:36px;height:2px;margin-top:-1px;background:#000}
+.main_offer .offer_list{position:relative;max-width:1550px;margin:5px auto 0 auto}
+.main_offer .offer_list .swiper-wrapper{overflow:hidden}
+.main_offer .offer_list .swiper-slide{width:33.33%;float:left}
+.main_offer .offer_list .slide_cell{position:relative;padding:30px 30px 105px 30px;background:#fff;margin:25px;text-align:left}
+.main_offer .offer_list .btn_more{position:absolute;bottom:0;left:0;width:100%}
+.main_offer .offer_list .btn_more p{margin:30px}
+.main_offer .offer_list .cell_title{position:relative;font-size:36px;font-family:'MINIBold';padding-top:20px;margin-top:20px}
+.main_offer .offer_list .cell_title:after{content:'';position:absolute;top:0;left:0;width:50px;height:2px;background:#000}
+.main_offer .offer_list .info_txt{font-size:14px;line-height:23px;color:#262626;margin-top:10px}
+.main_offer .offer_list .info_list{margin-top:14px}
+.main_offer .offer_list .info_list li{position:relative;padding-left:104px;margin-top:10px}
+.main_offer .offer_list .info_list li:first-child{margin-top:0}
+.main_offer .offer_list .info_list li em{font-style:normal;display:block;position:absolute;top:0;left:0;font-size:14px;line-height:19px;}
+.main_offer .offer_list .info_list li p{font-size:14px;line-height:19px;margin-top:10px}
+.main_offer .offer_list .info_list li p.first{margin-top:0}
+.main_offer .swiper-pagination{position:relative;bottom:auto;left:auto;width:100%;margin-top:30px;display:none}
+.main_offer .swiper-pagination span{position:relative;background:#fff;border:2px solid #000;width:18px;height:18px;opacity:1;margin:0 6px}
+.main_offer .swiper-pagination-bullet-active:after{content:'';position:absolute;top:50%;left:50%;margin-top:-4px;margin-left:-4px;width:8px;height:8px;background:#000;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%}
+
+.main_offer .mobile_offer{display:none}
+
+@media screen and (max-width:1024px){    
+    .main_large_teaser .txt{}
+    .main_large_teaser .headerline{}
+    .main_large_teaser .model_table ul{} 
+    .main_large_teaser .model_wrap .model_table{width:70%}
+    .main_large_teaser .model_wrap .model_list{}
+
+    .main_large_teaser .model_wrap .model_list ul li{}
+    .main_large_teaser .model_wrap .model_list .cell{margin:0 15px;padding-bottom:0}
+    .main_large_teaser .model_wrap .model_list .title{margin-bottom:30px}
+
+    .main_large_teaser .model_wrap .model_list .name{position:relative;top:auto;left:auto}
+    .main_large_teaser .model_wrap .model_list .btn_all{margin-top:20px}
+
+
+
+    .main_offer .offer_list{margin-top:30px}
+    .main_offer .swiper-pagination{display:block}
+    .main_offer .offer_list .swiper-wrapper{overflow:visible}
+    .main_offer .offer_list .swiper-slide{width:437px;float:none}
+    .main_offer .offer_list .slide_cell{margin:0}
+}
+
+@media screen and (max-width:640px){
+    .main_large_teaser .small_title{font-size:18px;font-family:'Nanum Myeongjo';}
+    .main_large_teaser .teaser_info{padding-top:30px;padding-bottom:70px}
+    .main_large_teaser .model_table ul{max-width:100%}    
+    .main_large_teaser .model_table .btn_more{width:100%;margin-top:35px}
+    .main_large_teaser .headerline{font-size:50px;letter-spacing:-1px;}
+
+    .main_large_teaser .model_wrap .model_list .title{margin-bottom:10px}
+    .main_large_teaser .model_wrap .model_list .cell{margin:0}
+    .main_large_teaser .model_wrap .model_list ul{margin-top:5px;width: 100%;}
+    .main_large_teaser .model_wrap .model_list ul li{margin-top:5px;width:50%}
+    .main_large_teaser .model_wrap .model_list ul li:first-child .cell{margin-right:5px}
+    .main_large_teaser .model_wrap .model_list ul li:last-child .cell{margin-left:5px}
+
+    .main_offer .swiper-container{display:none}
+    .main_offer .mobile_offer{display:block}
+    .main_offer .mobile_offer .slide_cell{padding:20px;display:none}
+    .main_offer .mobile_offer .btn_more{position:relative;bottom:auto;left:auto;margin-top:20px}
+    .main_offer .mobile_offer .btn_more p{margin:0}
+
+    .main_large_teaser .model_table li span{display:inline-block}
+
+    .main_large_teaser .headerline{display:none;font-size:68px}
+    .main_large_teaser .headerline.m_head{display:block}
+
+    .main_large_teaser .model_wrap .model_table{width:100%;padding-right:0}
+    .main_large_teaser .model_wrap .model_list{width:100%;margin-top:30px;padding-left:0}
+}
+
+@media screen and (max-width:420px){
+    .main_large_teaser .small_title{font-size:22px}
+    .main_large_teaser .headerline{font-size:56px;line-height:60px}
+	.main_large_teaser .model_table li{padding-left:50px}
+}
+
+@media screen and (max-width:375px){
+    .main_large_teaser .small_title{font-size:20px}
+	.main_large_teaser .model_table li .ident{font-size:13px}
+}
+
+
+
+@media screen and (max-width:320px){
+    .main_large_teaser .small_title{font-size:16px}
+    .main_large_teaser .headerline{font-size:44px;line-height:44px}
+}
+

@@ -1,0 +1,251 @@
+
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <script src="https://cdn.rawgit.com/konvajs/konva/2.1.6/konva.min.js"></script>
+  <script src="https://www2.outback.co.kr/asset/common/js/jquery.js"></script>
+  <script src="./html2canvas.min.js"></script>
+  <script src="./canvas2image.js"></script>
+
+<meta name="Description" content="해당 페이지 설명(45자내외)">
+<meta name="Author" content="만든이">
+<meta name="Keywords" content="키워드">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<meta property="og:title" content="공유하기 사이트 이름">
+<meta property="og:type" content="website">
+<meta property="og:url"	content="해당 url 주소">
+<meta property="og:image" content="해당페이지 대표이미지">
+<meta property="og:description" content="해당 페이지 설명(45자내외)">
+<link rel="canonical" href="대표URL" />
+
+  <title>Canvas Drag Drop Sample </title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+
+      background-color: #F0F0F0;
+    }
+  </style>
+</head>
+<body>
+<div style="width: 375px; height:800px;">
+  <div id="captureArea" style="width: 375px; height:600px;">
+	  <div style="position: relative;">
+		<img src="https://www2.outback.co.kr/upload/mainVisual/20180508/20180508101017783002.jpg" style="max-width: 100%; z-index: 1; "/>
+	  </div>
+	  <div id="uploadImage" style="position: absolute; z-index: 999; bottom: 10px;">	
+	  </div>
+	 
+  </div>
+  <div style="height: 200px; margin-top:20px;">
+	<input type="file" name="uploadFile" id="uploadFile" onchange="" /> <br />
+	<!--<input type="button" value="저장" id="saveBtn" />-->
+  </div>
+ </div>
+  <script>
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+	$("#uploadFile").change(function(){
+		readURL(this);
+	});
+	function readURL(input) {
+	 
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+	 
+			reader.onload = function (e) {
+				setConvasImage(e.target.result);
+			}
+			
+			reader.readAsDataURL(input.files[0]);
+			
+		}
+	}
+ 
+
+    function update(activeAnchor) {
+        var group = activeAnchor.getParent();
+
+        var topLeft = group.get('.topLeft')[0];
+        var topRight = group.get('.topRight')[0];
+        var bottomRight = group.get('.bottomRight')[0];
+        var bottomLeft = group.get('.bottomLeft')[0];
+        var image = group.get('Image')[0];
+
+        var anchorX = activeAnchor.getX();
+        var anchorY = activeAnchor.getY();
+
+        // update anchor positions
+        switch (activeAnchor.getName()) {
+            case 'topLeft':
+                topRight.setY(anchorY);
+                bottomLeft.setX(anchorX);
+                break;
+            case 'topRight':
+                topLeft.setY(anchorY);
+                bottomRight.setX(anchorX);
+                break;
+            case 'bottomRight':
+                bottomLeft.setY(anchorY);
+                topRight.setX(anchorX);
+                break;
+            case 'bottomLeft':
+                bottomRight.setY(anchorY);
+                topLeft.setX(anchorX);
+                break;
+        }
+
+        image.position(topLeft.position());
+
+        var width = topRight.getX() - topLeft.getX();
+        var height = bottomLeft.getY() - topLeft.getY();
+        if(width && height) {
+            image.width(width);
+            image.height(height);
+        }
+    }
+    function addAnchor(group, x, y, name) {
+        var stage = group.getStage();
+        var layer = group.getLayer();
+
+        var anchor = new Konva.Circle({
+            x: x,
+            y: y,
+            stroke: '#666',
+            fill: '#ddd',
+            strokeWidth: 2,
+            radius: 8,
+            name: name,
+            draggable: true,
+            dragOnTop: false
+        });
+
+        anchor.on('dragmove', function() {
+            update(this);
+            layer.draw();
+        });
+        anchor.on('mousedown touchstart', function() {
+            group.setDraggable(false);
+            this.moveToTop();
+        });
+        anchor.on('dragend', function() {
+            group.setDraggable(true);
+            layer.draw();
+        });
+        // add hover styling
+        anchor.on('mouseover', function() {
+            var layer = this.getLayer();
+            document.body.style.cursor = 'pointer';
+            this.setStrokeWidth(4);
+            layer.draw();
+        });
+        anchor.on('mouseout', function() {
+            var layer = this.getLayer();
+            document.body.style.cursor = 'default';
+            this.setStrokeWidth(2);
+            layer.draw();
+        });
+
+        group.add(anchor);
+    }
+
+function setConvasImage(_imgSrc) {
+	console.log("width === : " + width);
+	console.log("height === : " + height);
+    var stage = new Konva.Stage({
+        container: 'uploadImage',
+        width: width,
+        height: height
+    });
+
+    var layer = new Konva.Layer();
+    stage.add(layer);
+
+    // darth vader
+/*
+    var darthVaderImg = new Konva.Image({
+        width: 200,
+        height: 137
+    });
+*/
+    // yoda
+    var yodaImg = new Konva.Image({
+        width: 200,
+        height: 150
+    });
+
+/*
+    var darthVaderGroup = new Konva.Group({
+        x: 180,
+        y: 50,
+        draggable: true
+    });
+    layer.add(darthVaderGroup);
+    darthVaderGroup.add(darthVaderImg);
+    addAnchor(darthVaderGroup, 0, 0, 'topLeft');
+    addAnchor(darthVaderGroup, 200, 0, 'topRight');
+    addAnchor(darthVaderGroup, 200, 138, 'bottomRight');
+    addAnchor(darthVaderGroup, 0, 138, 'bottomLeft');
+*/
+    var yodaGroup = new Konva.Group({
+        x: 100,
+        y: 110,
+        draggable: true
+    });
+    layer.add(yodaGroup);
+    yodaGroup.add(yodaImg);
+    addAnchor(yodaGroup, 0, 0, 'topLeft');
+    addAnchor(yodaGroup, 200, 0, 'topRight');
+    addAnchor(yodaGroup, 200, 150, 'bottomRight');
+    addAnchor(yodaGroup, 0, 150, 'bottomLeft');
+
+/*
+    var imageObj1 = new Image();
+    imageObj1.onload = function() {
+        darthVaderImg.image(imageObj1);
+        layer.draw();
+    };
+    imageObj1.src = 'https://www2.outback.co.kr/upload/mainVisual/20180628/20180628141109252029.jpg';
+*/
+    var imageObj2 = new Image();
+    imageObj2.onload = function() {
+        yodaImg.image(imageObj2);
+        layer.draw();
+    };
+    //imageObj2.src = 'https://www2.outback.co.kr/upload/partner/20180419/20180419110543989037.jpg';
+	imageObj2.src = _imgSrc;
+}
+
+$("#saveBtn").click(function(e) {
+
+    e.preventDefault();    
+
+   var canvas ="";
+
+   html2canvas($("#captureArea")[0], {
+
+       onrendered: function(canvas) {
+		   alert("test");
+			alert(canvas.toDataURL("image/png"));
+           // document.getElementById("RESULT").src = canvas.toDataURL("image/png");   // 이미지를 보여주고 싶으면 이런식으로 치환해버림 됨
+
+            var $imgs = document.getElementById('imgs');    
+
+			$imgs.appendChild("<img src='" + canvas.toDataURL("image/png") + "' />");
+       }
+
+   });
+
+
+});
+
+
+  </script>
+
+</body>
+</html>

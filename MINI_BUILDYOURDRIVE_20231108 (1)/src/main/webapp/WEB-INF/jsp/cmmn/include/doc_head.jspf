@@ -1,0 +1,84 @@
+<%@ page language="java" pageEncoding="utf-8"%>
+<%@ include file="/WEB-INF/jsp/cmmn/include/declare.jspf" %>
+<%
+/**   
+* @Class Name : header.jspf
+* @Description : include  jsp
+* @Modification Information
+* 
+*   수정일         수정자                   수정내용
+*  -------    --------    ---------------------------
+*  2016.04.08 jjiman         최초 생성
+*
+* author jjiman
+* since 2016.04.08
+*/
+%>
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta http-equiv="Pragma" content="no-cache"> 
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="bmw korea">
+
+	<meta property="og:url" content="/" />
+	<meta property="og:title" content="MINI BUILD YOUR DRIVE" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="/asset/images/common/mini_og_image_20220907.jpg" />
+	<meta property="og:description" content="MINI BUILD YOUR DRIVE 2023." />
+	<link rel="image_src" href="/asset/images/common/mini_og_image_20220907.jpg" />
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/asset/images/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/asset/images/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/asset/images/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/asset/images/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/asset/images/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/asset/images/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/asset/images/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/asset/images/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/asset/images/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/asset/images/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/asset/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/asset/images/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/asset/images/favicon/favicon-16x16.png">
+        <link rel="shortcut icon" type="image/x-icon" href="/asset/images/favicon/favicon.ico" />
+        
+        <title>MINI BUILD YOUR DRIVE.</title>
+        
+        <!-- Bootstrap core CSS -->
+        <link href="/asset/css/common.css?v=202004281241" rel="stylesheet" />
+        
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="/asset/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="/asset/js/jquery-1.12.2.min.js"></script>
+
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '1160880317271784');
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1160880317271784&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->

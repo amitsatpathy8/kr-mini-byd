@@ -1,0 +1,188 @@
+<!-- desk -->
+    <div class="desk">
+        <div class="product_teaser">            
+        </div>
+        <script>
+        $(document).ready(function(){
+            
+             if($('.accordion-menu').length > 0){
+                $('.accordion-menu').each(function(){            
+                    var _menu = new Accordion($(this));
+                });
+                //Accordion_Menu.init();
+            }
+            $('#header').removeClass('popOpen');
+            $('#p_top').removeClass('mOpen');
+        });
+        </script>
+        <div id="product_detail" class="product_list_wrap">
+            <!-- 
+            //    @ ajax content (accessories_detail.html)
+            -->
+            
+            <div class="detail_data">
+                <div class="detail_menu">
+                    <ul>
+                        <li class="actived"><a href="javascript:topCate.ajaxLoadList('tire_list.html');" onclick="sort_menu(this);">WHEEL &amp; TIRE (4)</a></li>
+                        <li><a href="javascript:topCate.ajaxLoadList('tire_list.html');" onclick="sort_menu(this);">TIRE</a></li>
+                    </ul>
+
+                </div>
+                <div id="detail_list" class="detail_list_wrap">
+                <!-- 
+                //    @ ajax content (tire_list.html)
+                -->
+                    
+                <!-- 
+                //    @ ajax content end (tire_list.html)
+                -->
+                </div>
+            </div>
+
+            <script>
+                $(function(){
+                    topCate.ajaxLoadList('tire_list.html');
+                });
+
+                function sort_menu(_t){
+                    var __t = $(_t);
+                    var __p = __t.parent();
+                    var __pp = __t.parents('ul');
+                    $('.detail_menu').find('ul').each(function(){
+                        if(__pp.index() == $(this).index()){
+                            $(this).find('li').eq(__p.index()).addClass('actived').siblings().removeClass('actived');
+                        }else{
+                            $(this).find('li').removeClass('actived');
+                        }
+                    });
+                }
+            </script>
+
+            <!--
+            //    @ ajax content end (accessories_detail.html)
+            -->
+        </div>
+    </div>
+    <!-- //desk -->
+
+    <!-- mobile -->
+    <div class="mobile">
+        <div class="m_top_visual">
+            <h3><p>WHEEL &amp; TIRE</p></h3>
+            <div class="visual">
+                <div class="name">New MINI 3-DOOR</div>
+                <img src="../images/content/m_car_visual01.png" alt=""/>
+            </div>
+        </div>
+
+        <div class="m_content">
+            <div class="m_con_wrap">
+                <div>
+                    <ul class="accordion-menu">
+                        <li>
+                            <a href="javascript:;">WHEEL &amp; TIRE (7)<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample02.jpg" alt=""/></div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MULTI-SPOKE 505, 17"<br>(LIGHT ALLOY)</p>
+                                        <p class="tire_title">Pirelli CintuRato P7 RSC</p>
+                                    </div>
+                                    <p class="list_price">                    
+                                        <del><span>216,000</span>원</del><span>173,000</span>원                        
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;">TIRE<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample02.jpg" alt=""/></div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MULTI-SPOKE 505, 17"<br>(LIGHT ALLOY)</p>
+                                        <p class="tire_title">Pirelli CintuRato P7 RSC</p>
+                                    </div>
+                                    <p class="list_price">                    
+                                        <del><span>216,000</span>원</del><span>173,000</span>원                        
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>                                            
+                </div>
+            </div>
+        </div>
+        <script>
+		/* 161021 수정 */
+        $(function(){
+            m_slide_arr = [];
+            $('.m_con_wrap').find('.gallery_thumb').each(function(){
+                var _slide = $(this).find('.picture_slide').bxSlider({
+                    pagerCustom:'#'+$(this).find('.picture_slide').attr('data-pager'),
+                    controls:false,
+                    infiniteLoop:false,
+                    pause:3500,
+                    auto: true,
+                    autoControls: true    
+                    
+                });
+                m_slide_arr.push(_slide);
+            });
+			scroll_sort_check();
+        });
+        function m_slide_resize(){
+            var i=0;
+            for(i=0;i<m_slide_arr.length;i++){
+                m_slide_arr[i].reloadSlider();
+            }
+        }
+		
+        $(window).scroll(function() {            
+			npos = $(window).scrollTop();
+			scroll_sort_check();                                     
+		});//end scroll
+
+		$(window).resize(function(){
+			npos = $(window).scrollTop();
+			if (mResizeCheck02 != $(window).width()) {						
+				scroll_sort_check();
+				mResizeCheck02 = $(window).width();
+			}    
+		});
+
+
+		function scroll_sort_check(){
+			if(SW > 640){
+				if(npos >= $('#product_detail').offset().top - 89){
+					$('#product_detail').find('.detail_menu').addClass('fix');    
+					$('#product_detail').find('.detail_list_wrap').addClass('fix');    
+
+					if(npos >= $('.bottom_info').offset().top - $('.detail_menu').innerHeight()-$('#header').innerHeight()-60){
+						$('.detail_menu').css({'position':'absolute','top':'auto','bottom':0}).addClass('b_fix');
+					}else{
+						$('.detail_menu').attr('style','').removeClass('b_fix');
+					}	
+				}else{
+					$('#product_detail').find('.detail_menu').removeClass('fix');
+					$('#product_detail').find('.detail_menu').removeClass('b_fix');
+					$('#product_detail').find('.detail_list_wrap').removeClass('fix');
+					$('.detail_menu').attr('style','').removeClass('b_fix');
+				}
+
+				if($('#product_detail').find('.detail_menu').innerHeight() > $('#product_detail').find('.detail_list_wrap').innerHeight()){
+					 $('#product_detail').find('.detail_data').css({'min-height':$('#product_detail').find('.detail_menu').innerHeight()});
+				}else{
+					 $('#product_detail').find('.detail_data').attr('style','');
+				}
+			}else{
+					$('#product_detail').find('.detail_menu').removeClass('fix');
+					$('#product_detail').find('.detail_menu').removeClass('b_fix');
+					$('#product_detail').find('.detail_list_wrap').removeClass('fix');
+					$('#product_detail').find('.detail_data').attr('style','');
+			}   
+		}
+		/* 161021 수정 끝 */
+        </script>
+    </div>
+    <!-- //mobile -->    

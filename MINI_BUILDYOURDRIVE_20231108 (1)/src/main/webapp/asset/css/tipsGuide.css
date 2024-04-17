@@ -1,0 +1,118 @@
+.tip_title{padding-top:40px;padding-bottom:10px}
+.tip_title .headerline{position:relative;font-size:54px;line-height:52px;font-family:'Nanum Myeongjo';font-weight:700;padding-right:170px;}
+.tip_title .headerline a{position:absolute;top:0;right:0;display:block;font-size:16px;font-family:'MINIRegular' , 'Nanum Myeongjo', sans-serif;font-weight:bold;line-height:52px;padding-right:50px;background:url(../images/content/btn_guide_share_icon.png) right center no-repeat}
+.tip_title .headerline em{font-style:normal;font-family:'MINIBold'}
+.tip_title ul{margin-top:15px}
+.tip_title li{font-size:14px;line-height:23px}
+
+.tip_list_wrap{background:#f1f1f1}
+
+.t_list{max-width:1550px;margin:0 auto;padding:20px 0 0 0}
+.t_list > div{width:25%;float:left}
+.t_list > div > div{position:relative;margin:20px 22px}
+.t_list:after {content:" ";display:block;clear:both;overflow:hidden}
+.t_list .list_item{cursor:pointer}
+.t_list .list_item .thumb{background:#fff;border:2px solid #fff;transition: all .3s ease-out;}
+.t_list .list_item .info{font-size:14px;font-weight:700;padding-left:30px;margin-top:10px;line-height:22px;height:22px}
+.t_list .list_item_wrap.active .thumb,
+.t_list .list_item:hover .thumb{border-color:#000}
+
+#list_view{position:relative;float:left;width:100%;margin-top:10px}
+#list_view .view_wrap{position:relative;z-index:5}
+#list_view .view_wrap > div{display:none}
+#list_view .bg{position:absolute;top:0;left:50%;background:#fff;height:100%;z-index:0}
+#list_view .thumb{position:absolute;top:0;left:30px;width:61%;height:100%;z-index:3}
+#list_view .thumb img{width:100%}
+#list_view .title{font-size:32px;font-family:'Nanum Myeongjo';font-weight:700}
+#list_view .txt_data{position:relative;width:50%;margin-left:50%;padding:240px 30px 80px 70px;z-index:10;min-height:466px}
+#list_view .info{position:relative;font-size:14px;line-height:23px;margin-top:20px;padding-top:20px;word-break:keep-all}
+#list_view .info:after{content:'';position:absolute;top:0;left:0;width:50px;height:2px;background:#000}
+
+.t_mobile_list{display:none}
+.t_mobile_list .swiper-pagination{position:relative;bottom:auto !important;left:auto !important;width:100%;padding-bottom:19px}
+.t_mobile_list .swiper-pagination span{position:relative;background:#fff;border:2px solid #000;width:18px;height:18px;opacity:1;margin:0 6px}
+.t_mobile_list .swiper-pagination-bullet-active:after{content:'';position:absolute;top:50%;left:50%;margin-top:-4px;margin-left:-4px;width:8px;height:8px;background:#000;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%}
+.t_mobile_list .swiper-button-next,
+.t_mobile_list .swiper-button-prev{width:17px;top:50%;margin-top:-16px}
+.t_mobile_list .title{font-size:20px;font-family:'Nanum Myeongjo';font-weight:700;}
+.t_mobile_list .thumb{line-height:0}
+.t_mobile_list .txt_data{position:relative;padding:32px 20px 55px 20px;border-top:10px solid #666}
+.t_mobile_list .info{position:relative;font-size:14px;line-height:21px;margin-top:18px;padding-top:18px;word-break:keep-all}
+.t_mobile_list .info:after{content:'';position:absolute;top:0;left:0;width:50px;height:2px;background:#000}
+.t_mobile_list .swiper-button-next{right:20px}
+.t_mobile_list .swiper-button-prev{left:20px}
+.t_mobile_list .thumb_slide{background:#fff}
+
+
+#wrapper{position:relative}
+
+#share_pop{position:absolute;top:0;left:0;width:100%;height:100%;z-index:50;background:rgba(255,255,255,0.9);display:none}
+#share_pop .share_wrap{position:relative;max-width:1440px;margin:0 auto;padding-top:137px}
+#share_pop .share_wrap .btn_close{position:absolute;top:137px;right:0}
+#share_pop .share_con{position:relative;max-width:705px;margin:0 auto;text-align:center;padding-top:120px;opacity:0}
+#share_pop .share_con .share_title{font-family: 'MINIBold';font-size:32px}
+#share_pop .share_con ul{margin-top:40px}
+#share_pop .share_con ul li{display:inline}
+#share_pop .share_con ul li a{margin:0 15px}
+#share_pop .share_con .share_copy{position:relative;padding-right:177px;height:66px;margin-top:50px}
+#share_pop .share_con .share_copy .read{position:relative;border:2px solid #000;background:#fff;padding:0 20px}
+#share_pop .share_con .share_copy .read input{font-size:18px;font-weight:bold;border:none;background:none;display:block;position:relative;width:100%;height:62px}
+#share_pop .share_con .share_copy a{display:block;position:absolute;top:0;right:0;font-size:20px;color:#fff;font-weight:bold;text-align:center;width:177px;height:66px;line-height:66px;background:#ac2430}
+
+
+#header .btn_share{position:absolute;top:6px;right:70px;width:50px;height:50px;overflow:hidden;display:none;
+    background:url(../images/content/btn_m_top_share.png) left top no-repeat;
+    -webkit-background-size:50px auto;
+    -moz-background-size:50px auto;
+    -o-background-size:50px auto;
+    background-size:50px auto;
+}
+
+#header.popOpen .btn_share{background-position:left bottom}
+
+@media screen and (max-width:1500px){  
+    #share_pop .share_wrap .btn_close{right:30px}
+}
+@media screen and (max-width:1024px){    
+    #share_pop .share_wrap .btn_close{right:25px}
+    .tip_title{padding-bottom:30px}
+    .tip_title .headerline{background:none}
+    .t_list{padding:0 15px}
+    .t_list > div{width:50%}
+    .t_list > div > div{margin:18px 9px}
+
+    #list_view .thumb{position:relative;top:auto;left:auto;width:100%;height:auto}
+    #list_view .txt_data{position:relative;width:100%;margin-left:0;padding:0 0 40px 0;min-height:0}
+}
+
+@media screen and (max-width:768px){  
+    #share_pop .share_wrap .btn_close{right:0}
+    #share_pop .share_wrap{margin:0 25px}
+
+}
+
+@media screen and (max-width:640px){    
+    #share_pop .share_wrap .btn_close{display:none}
+    #share_pop .share_wrap{margin:0 20px;padding-top:0}
+    #share_pop .share_con{padding-top:110px}
+    #share_pop .share_con ul{margin-top:60px}
+    #share_pop .share_con .share_copy{margin-top:40px}
+    #share_pop .share_con ul li a{margin:0 5px}
+
+    #header .btn_share{display:block}
+    
+
+    .t_list{display:none}
+    .tip_title{padding-top:35px}
+    .tip_title .headerline{font-size:26px;line-height:30px;padding-right:0}
+    .tip_title .headerline a{display:none}
+    .tip_title ul{margin-top:20px}
+    .tip_title li{font-size:16px}
+    .t_mobile_list{display:block}
+}
+
+@media screen and (max-width:420px){   
+    #share_pop .share_con .share_copy{padding-right:0;height:auto}
+    #share_pop .share_con .share_copy .read input{font-size:18px;font-weight:bold;border:none;background:none;display:block;position:relative;width:100%;height:62px}
+    #share_pop .share_con .share_copy a{position:relative;top:auto;right:auto;width:auto;margin-top:5px}
+}

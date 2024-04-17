@@ -1,0 +1,352 @@
+<!-- desk -->
+    <div class="desk">
+        <div class="product_teaser">
+            <div class="container_big">
+                <div class="teaser_visual">
+                    <div>
+                        <div class="visual" id="teaser_car"><img src="../images/content/product_main_teaser_visual00.jpg" alt=""/></div>
+                    </div>
+                </div>
+                <div id="original_menu" class="teaser_menu menu_left">
+                    <h3 class="e_wrap">ORIGINAL</h3>
+                    <ul>
+                        <li class="e_wrap"><a href="javascript:topCate.ajaxLoadDetail('accessories_detail.html');" onclick="topCate.openDetail();">EXTERIOR</a></li>
+                        <li class="e_wrap"><a href="javascript:topCate.ajaxLoadDetail('accessories_detail.html');" onclick="topCate.openDetail();">INTERIOR</a></li>
+                        <li class="e_wrap"><a href="javascript:topCate.ajaxLoadDetail('accessories_detail.html');" onclick="topCate.openDetail();">ELECTRONICS</a></li>
+                        <li class="e_wrap"><a href="javascript:topCate.ajaxLoadDetail('accessories_detail.html');" onclick="topCate.openDetail();">ROOF ACCESSORIES</a></li>
+                        <li class="e_wrap"><a href="javascript:topCate.ajaxLoadDetail('accessories_detail.html');" onclick="topCate.openDetail();">MINI ORIGINAL CAR CARE -<br>SELF CAR WASH PACKAGE</a></li>
+
+                    </ul>
+                </div>
+                <div id="jcw_menu" class="teaser_menu menu_right">
+                    <h3 class="e_wrap">JCW</h3>
+                    <ul>
+                        <li class="e_wrap"><a href="javascript:topCate.ajaxLoadDetail('accessories_detail.html');" onclick="topCate.openDetail();">PERFORMANCE TUNING</a></li>
+                        <li class="e_wrap"><a href="javascript:topCate.ajaxLoadDetail('accessories_detail.html');" onclick="topCate.openDetail();">EXTERIOR</a></li>
+                        <li class="e_wrap"><a href="javascript:topCate.ajaxLoadDetail('accessories_detail.html');" onclick="topCate.openDetail();">INTERIOR</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+        $(document).ready(function(){
+            if(AgentFlag){
+                // product main teasser effecct
+                TweenMax.to($('#teaser_car'),2,{alpha:1,delay:0.5,onComplete:function(){
+                    mouseMoveHand();
+                }});
+                // product menu effect
+                $('.product_teaser').find('.teaser_menu').each(function(){
+                    var _dx;
+                    if($(this).hasClass('menu_left')){
+                        _dx = -70;
+                    }else{
+                        _dx = 70;
+                    }
+                    TweenMax.set($(this).find('.e_wrap'),{x:_dx});
+
+                    var i=0;
+                    $(this).find('.e_wrap').each(function(){
+                        var _delay = (i*0.15)+1;
+                        TweenMax.to($(this),1.2,{alpha:1,x:0,delay:_delay,ease:Quad.easeOut});
+                        i++;
+                    });
+                });
+            }else{
+
+            }
+
+             if($('.accordion-menu').length > 0){
+                $('.accordion-menu').each(function(){            
+                    var _menu = new Accordion($(this));
+                });
+                //Accordion_Menu.init();
+            }
+
+            $('#header').removeClass('popOpen');
+            $('#p_top').removeClass('mOpen');
+        });
+        function mouseMoveHand(){
+            var    offx,dx;
+            var target = $('#teaser_car');
+            $('.product_teaser').mousemove(function(event){
+                offx = event.pageX
+                dx = (offx - SW/2)*0.05
+                TweenMax.to(target,1.2,{x:dx,ease:Quad.easeOut});
+            });
+        }
+        </script>
+        <div id="product_detail" class="product_list_wrap">
+            <!-- 
+            //    @ ajax content (accessories_detail.html)
+            -->
+            <!--
+            //    @ ajax content end (accessories_detail.html)
+            -->
+        </div>
+    </div>
+    <!-- //desk -->
+
+    <!-- mobile -->
+    <div class="mobile">
+        <div class="m_top_visual">
+            <h3><p>CAR ACCESSORIES</p></h3>
+            <div class="visual">
+                <div class="name">New MINI 3-DOOR</div>
+                <img src="../images/content/m_car_visual01.png" alt=""/>
+            </div>
+        </div>
+
+        <div class="m_content">
+            <div class="m_con_tab">
+                <ul>
+                    <li class=""><a href="javascript:m_con_align(0);">ORIGINAL</a></li>
+                    <li class=""><a href="javascript:m_con_align(1);">JCW</a></li>
+                </ul>
+            </div>
+            <div class="m_con_wrap">
+                <div>
+                    <ul class="accordion-menu">
+                        <li>
+                            <a href="javascript:;">EXTERIOR (7)<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="gallery_thumb">
+                                        <!-- 
+                                        // data-pager 값과 하단 bx-pager 클래스의 아이디값 동일해야합니다.
+                                        -->
+                                        <ul class="picture_slide" data-pager="m-bx-pager-0">
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">1</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">2</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">3</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">4</span></li>        
+                                        </ul>
+                                        <div id="m-bx-pager-0" class="bx-pager">
+                                            <a data-slide-index="0" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="1" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="2" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="3" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                        </div>
+                                    </div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                                <div class="data_cell">
+                                    <div class="gallery_thumb">
+                                        <!-- 
+                                        // data-pager 값과 하단 bx-pager 클래스의 아이디값 동일해야합니다.
+                                        -->
+                                        <ul class="picture_slide" data-pager="m-bx-pager-1">
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">1</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">2</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">3</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">4</span></li>        
+                                        </ul>
+                                        <div id="m-bx-pager-1" class="bx-pager">
+                                            <a data-slide-index="0" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="1" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="2" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="3" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                        </div>
+                                    </div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                                <div class="data_cell">
+                                    <div class="gallery_thumb">
+                                        <!-- 
+                                        // data-pager 값과 하단 bx-pager 클래스의 아이디값 동일해야합니다.
+                                        -->
+                                        <ul class="picture_slide" data-pager="m-bx-pager-2">
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">1</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">2</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">3</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">4</span></li>        
+                                        </ul>
+                                        <div id="m-bx-pager-2" class="bx-pager">
+                                            <a data-slide-index="0" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="1" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="2" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="3" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                        </div>
+                                    </div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample.jpg" alt=""/></div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                        <p class="long_info">차량 문을 열면 바닥에 당신의 MINI 로고를 비춰줍니다. 차량 문을 뜯는 작업 없이 간단히 아래쪽 램프를 교체하여 장착 가능합니다. MINI 로고, 유니온잭 로고, JCW 패턴 로고 3가지가 1패키지로 들어 있어 원하는 패턴으로 커스터마이즈 가능합니다.</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample.jpg" alt=""/></div>
+                                    <div class="info_wrap no_price">
+                                        <p class="list_title">SUNSHADE REAR / REAR SIDE WINDOW</p>
+                                        <div class="mulity_price">
+                                            <p class="txt">Additional headlight 한대분 (부속 포함)</p>
+                                            <p class="price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                            <p class="txt">Additional headlight LED 한대분 (부속 포함)</p>
+                                            <p class="price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;">INTERIOR<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample.jpg" alt=""/></div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                        <p class="long_info">차량 문을 열면 바닥에 당신의 MINI 로고를 비춰줍니다. 차량 문을 뜯는 작업 없이 간단히 아래쪽 램프를 교체하여 장착 가능합니다. MINI 로고, 유니온잭 로고, JCW 패턴 로고 3가지가 1패키지로 들어 있어 원하는 패턴으로 커스터마이즈 가능합니다.</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;">ELECTRONICS<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample.jpg" alt=""/></div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                        <p class="long_info">차량 문을 열면 바닥에 당신의 MINI 로고를 비춰줍니다. 차량 문을 뜯는 작업 없이 간단히 아래쪽 램프를 교체하여 장착 가능합니다. MINI 로고, 유니온잭 로고, JCW 패턴 로고 3가지가 1패키지로 들어 있어 원하는 패턴으로 커스터마이즈 가능합니다.</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;">ROOF ACCESSORIES<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample.jpg" alt=""/></div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                        <p class="long_info">차량 문을 열면 바닥에 당신의 MINI 로고를 비춰줍니다. 차량 문을 뜯는 작업 없이 간단히 아래쪽 램프를 교체하여 장착 가능합니다. MINI 로고, 유니온잭 로고, JCW 패턴 로고 3가지가 1패키지로 들어 있어 원하는 패턴으로 커스터마이즈 가능합니다.</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;">MINI ORIGINAL CAR CARE - <br>SELF CAR WASH PACKAGE<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample.jpg" alt=""/></div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                        <p class="long_info">차량 문을 열면 바닥에 당신의 MINI 로고를 비춰줍니다. 차량 문을 뜯는 작업 없이 간단히 아래쪽 램프를 교체하여 장착 가능합니다. MINI 로고, 유니온잭 로고, JCW 패턴 로고 3가지가 1패키지로 들어 있어 원하는 패턴으로 커스터마이즈 가능합니다.</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>                                            
+                </div>
+                <div>
+                    <ul class="accordion-menu">
+                        <li>
+                            <a href="javascript:;">PERFORMANCE TUNING<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="gallery_thumb">
+                                        <!-- 
+                                        // data-pager 값과 하단 bx-pager 클래스의 아이디값 동일해야합니다.
+                                        -->
+                                        <ul class="picture_slide" data-pager="m-bx-pager-4">
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">1</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">2</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">3</span></li>        
+                                            <li><img src="../images/content/thumb_sample.jpg" alt=""/><span class="test">4</span></li>        
+                                        </ul>
+                                        <div id="m-bx-pager-4" class="bx-pager">
+                                            <a data-slide-index="0" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="1" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="2" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                            <a data-slide-index="3" href=""><img src="../images/content/thumb_small_icon_sample.jpg" alt=""/></a>
+                                        </div>
+                                    </div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;">EXTERIOR<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample.jpg" alt=""/></div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                        <p class="long_info">차량 문을 열면 바닥에 당신의 MINI 로고를 비춰줍니다. 차량 문을 뜯는 작업 없이 간단히 아래쪽 램프를 교체하여 장착 가능합니다. MINI 로고, 유니온잭 로고, JCW 패턴 로고 3가지가 1패키지로 들어 있어 원하는 패턴으로 커스터마이즈 가능합니다.</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;">ENTERIOR<span></span></a>
+                            <div class="acoordion-data slide_cell detail_list_wrap">
+                                <div class="data_cell">
+                                    <div class="default_thumb"><img src="../images/content/thumb_sample.jpg" alt=""/></div>
+                                    <div class="info_wrap">
+                                        <p class="list_title">MIRROR CAP</p>
+                                        <p class="long_info">차량 문을 열면 바닥에 당신의 MINI 로고를 비춰줍니다. 차량 문을 뜯는 작업 없이 간단히 아래쪽 램프를 교체하여 장착 가능합니다. MINI 로고, 유니온잭 로고, JCW 패턴 로고 3가지가 1패키지로 들어 있어 원하는 패턴으로 커스터마이즈 가능합니다.</p>
+                                    </div>
+                                    <p class="list_price"><del><span>216,000</span>원</del><span>173,000</span>원</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>                                            
+                </div>
+            </div>
+        </div>
+        <script>
+        $(function(){
+            m_slide_arr = [];
+            $('.m_con_wrap').find('.gallery_thumb').each(function(){
+                var _slide = $(this).find('.picture_slide').bxSlider({
+                    pagerCustom:'#'+$(this).find('.picture_slide').attr('data-pager'),
+                    controls:false,
+                    infiniteLoop:false,
+                    pause:3500,
+                    auto: true,
+                    autoControls: true                        
+                });
+                m_slide_arr.push(_slide);
+            });
+            m_con_align(0);
+        });
+        function m_con_align(_i){
+            $('.m_con_tab').find('ul li').eq(_i).addClass('actived').siblings().removeClass('actived');
+            $('.m_con_wrap').find('> div').each(function(){
+                if($(this).index() == _i){
+                    $(this).stop(true).fadeIn(300);
+                }else{
+                    $(this).stop(true).hide();
+                }
+            });
+        }
+        function m_slide_resize(){
+            var i=0;
+            for(i=0;i<m_slide_arr.length;i++){
+                m_slide_arr[i].reloadSlider();
+            }
+        }
+        </script>
+    </div>
+    <!-- //mobile -->    

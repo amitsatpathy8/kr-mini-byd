@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bmwminiacc.serviceCenter.service.impl.ServiceCenterMapper">
+
+
+	<select id="selectList" parameterType="serviceCenterVO" resultType="serviceCenterVO">
+
+			SELECT
+				IDX
+				, ASC_NM
+				, ASC_ADDR
+				, CONCAT( ASC_PHN_1, '-', ASC_PHN_2, '-', ASC_PHN_3 ) as ASC_PHN
+				, ASC_WEKD_TMZ
+				, ASC_WEKE_TMZ
+				, ASC_MKHD
+				, ASC_MAP_LINK
+				, ASC_MAP_IMG_OG_NM
+				, ASC_MAP_IMG_PATH
+				, ASC_MAP_IMG_REAL_NM				
+			FROM TB_ASC
+			WHERE 
+				USE_FLG = 'Y'
+				AND DEL_FLG = 'N' 
+			ORDER BY ASC_SORT ASC, REG_DT DESC
+			
+	</select>
+
+
+</mapper>

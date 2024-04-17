@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/jdbc  http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd">
+	
+<!-- 	<jdbc:embedded-database id="dataSource" type="HSQL"> -->
+<!-- 		<jdbc:script location= "classpath:/db/sampledb.sql"/> -->
+<!-- 	</jdbc:embedded-database> -->
+    
+    <!-- hsql
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"/>
+        <property name="url" value="jdbc:log4jdbc:hsqldb:hsql://localhost/sampledb"/>
+        <property name="username" value="sa"/>
+    </bean>
+    -->  
+    
+    <!-- Mysql  -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://43.201.210.147:3306/dev_miniacc?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8" />
+        <property name="username" value="mini"/>
+        <property name="password" value="mini@09$@"/>
+<!--         <property name="url" value="jdbc:mysql://43.201.210.147:3306/miniacc?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8" /> -->
+<!--         <property name="username" value="miniacc"/> -->
+<!--         <property name="password" value="miniacc!@@%1225"/> -->
+        <property name="initialSize" value="2" />
+		<property name="maxActive" value="10" />
+		<property name="maxIdle" value="5" />
+		<property name="minIdle" value="2" />
+		<property name="validationQuery" value="SELECT 1" />
+		<property name="maxWait" value="30000" />
+		<property name="removeAbandoned" value="true" />
+		<property name="removeAbandonedTimeout" value="30" />      
+    </bean>
+    
+</beans>

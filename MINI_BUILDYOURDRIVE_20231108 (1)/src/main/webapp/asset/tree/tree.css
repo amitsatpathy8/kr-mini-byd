@@ -1,0 +1,35 @@
+body {font-family:'dotum';color:#999;font-size:12px;text-align:left}
+html, body {width:100%;background:#555}
+html, body ,div, p, ul, li,ol, table, th, td, textarea, input, span, form, h1, h2, h3, h4, h5, h6, dt, dl, dd, em, sup {padding:0px;margin:0px;vertical-align:top}
+h1,h2,h3,h4,h5,h6{font-weight:normal}
+img {border:0;vertical-align:top;outline:none}
+i, em {font-style:normal;}
+/* html5 ie9 else */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+   display:block;
+   padding:0;
+   margin:0
+}
+
+a {text-decoration:none;color:#666;cursor:pointer;}
+a:link, a:visited {text-decoration:none;color:#666;}
+a:hover, a:focus, a:active {text-decoration:none;}
+a:hover{color:#444}
+.list_cell > ul > li{position:relative;padding-left:20px;background:#fafafa;border-bottom:1px solid #dadada}
+.list_cell > ul > li > a{position:relative;display:block;font-size:12px;line-height:18px;padding:5px 18px 5px 10px;background:url(icon_list.gif) left center no-repeat}
+.list_cell .strong{color:#ffaf5a}
+
+a.otherMenu,
+a.title{position:relative;display:block;font-size:12px;padding-left:10px;color:#fff;line-height:35px;height:35px;background:#666;border-bottom:1px solid #cecece}
+a.otherMenu > em{padding-left:15px;background:url(icon_other_menu.png) left center no-repeat}
+a.title > em{padding-left:15px;background:url(icon_menu.png) left center no-repeat}
+span.icon{position:absolute;top:50%;right:10px}
+span.pr01{display:block;width:8px;height:8px;margin-top:-4px;background:#d78b8b}
+span.pr02{display:block;width:8px;height:8px;margin-top:-4px;background:#b5d287}
+span.pr03{display:block;width:8px;height:8px;margin-top:-4px;background:#84bcd6}
+
+.info{padding:10px;background:#fafafa;color:#666;border-bottom:1px solid #fff}
+.info > p{position:relative;text-align:left;padding-left:13px;height:15px;line-height:15px}
+.info > p > span{position:absolute;top:6px;left:0}
+
+.f_list{padding-bottom:700px}

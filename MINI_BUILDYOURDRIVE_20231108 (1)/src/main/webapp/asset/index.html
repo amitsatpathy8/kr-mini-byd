@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title></title>
+<!-- [if ie]>
+<style type="text/css">
+html {overflow:scroll; overflow-x:auto;}
+</style>
+<![endif]-->
+<script>
+function set_ui(){
+	var UserAgent = navigator.userAgent;
+	var UserFlag	=	true;
+	if (UserAgent.match(/iPhone|iPad|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+	{
+		//mobile!!
+		UserFlag = false;
+	}
+	return UserFlag
+};//end set_ui
+
+function mCheck(){
+	var _mobile = set_ui();
+	if(!_mobile){
+		window.location.href = "mobile.html";
+	}
+}
+mCheck();
+</script>
+</head>
+<frameset cols="240,*" > 
+  <frame src="list.html" name="left" marginwidth="0" marginheight="0" />
+  <frame src="sub/index.html" name="main" marginwidth="0" marginheight="0" />
+</frameset> 
+<noframes>&nbsp;</noframes>
+<body>
+</body>
+
+</html>
